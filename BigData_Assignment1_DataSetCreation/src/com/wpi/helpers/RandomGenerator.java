@@ -1,6 +1,7 @@
 package com.wpi.helpers;
 
 import java.security.SecureRandom;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class RandomGenerator {
@@ -8,7 +9,8 @@ public class RandomGenerator {
 	private String characters_lower;
 	private String characters_upper;
 	private String random_string;
-	
+	private int year; 
+
 	
 	private static final SecureRandom random = new SecureRandom();
 	
@@ -32,7 +34,14 @@ public class RandomGenerator {
 			
 			
 			random_string = characters_lower;
-		}	
+		}
+		
+		else if(type.equals("FriendshipDesc")) {
+			
+			random_string = characters_lower;
+		}
+		
+		
 	}
 	
 	public int getRandomNumberInRange(int min, int max) {
@@ -45,6 +54,12 @@ public class RandomGenerator {
 		return r.nextInt((max - min) + 1) + min;
 	}
     
+	
+//	public static int randDateBetween(int start, int end) {
+//		
+//        return start + (int)Math.round(Math.random() * (end - start));
+//        
+//    }
 	
 
     public String generateRandomString(int length) {
